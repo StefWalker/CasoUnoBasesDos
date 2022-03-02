@@ -2,7 +2,7 @@ package com.example;
 
 import java.sql.*;
 
-
+// Clase encargada de ejecutar cada Thread, Cada hilo Ejectuta el Query 1 Completandolo con uno de los 10 cantones distintos
 class Multithreading extends Thread {
     String pCanton;
     static final String DB_URL = "jdbc:sqlserver://localhost:1433;" +
@@ -23,6 +23,8 @@ class Multithreading extends Thread {
 	                            "WHERE C.Nombre = '";
     static final String QUERYGroup = " GROUP BY PA.Nombre, C.Nombre ";
 
+    // Funcion encargada de ejecutar el hilo y enviar el Queary a la DB y solicitar los datos 
+    // con ayuda de Jdbc
     public void run()
     {
         try {
